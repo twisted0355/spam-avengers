@@ -23,6 +23,7 @@
         <!-- Start content fluid -->
         <h1 class="text-center">Spam Avengers</h1>
         <div class="row">
+            <?php require_once('_send.php'); ?>
             <!-- Start form -->
             <form class="col-lg-6 col-lg-offset-3" action="index.php" method="POST" role="form">
                 <legend>My form</legend>
@@ -33,14 +34,23 @@
                     </p>
                     <p class="col-lg-6">
                         <label for="surname">surname</label>
-                        <input type="text" class="form-control" id="surname" name="surname" placeholder="your surname here">
+                        <input type="text" class="form-control" id="surname" name="surname"
+                            placeholder="your surname here">
                     </p>
                     <p class="col-lg-6">
                         <label for="phone">phone</label>
                         <input type="tel" class="form-control" id="phone" name="phone" placeholder="your phone number">
                     </p>
+                    <p class="col-lg-6">
+                        <label for="email">email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="your email">
+                    </p>
+                    <textarea name="message" id="message" rows="10" class="col-lg-12"
+                        style="margin-left:15px;"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="col-lg-1 col-lg-offset-5" style="margin-top:50px;">
+                    <button name="send" type="submit" class="btn btn-primary">Submit</button>
+                </div>
             </form><!-- end form -->
         </div>
     </div><!-- end content fluid -->

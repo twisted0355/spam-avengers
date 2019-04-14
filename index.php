@@ -23,6 +23,7 @@
         <!-- Start content fluid -->
         <h1 class="text-center">Spam Avengers</h1>
         <div class="row">
+        <?php require_once('captcha.php'); ?>
             <?php require_once('_send.php'); ?>
             <!-- Start form -->
             <form class="col-lg-6 col-lg-offset-3" action="index.php" method="POST" role="form">
@@ -45,6 +46,17 @@
                         <label for="email">email</label>
                         <input type="email" class="form-control" id="email" name="email" placeholder="your email">
                     </p>
+                    <!-- start captcha -->
+                    <p>
+                        <?php
+                            //Rand numbers
+                            echo captchaRand($nbrA,$nbrB,$total);
+                            captchaVerif($total);
+                        ?>
+                        <!-- start input response -->
+                        <input type="number" id="total" name="response" min="0" max="20"><!-- end input response -->
+                    </p>
+                    <!-- en captcha -->
                     <textarea name="message" id="message" rows="10" class="col-lg-12"
                         style="margin-left:15px;"></textarea>
                 </div>
